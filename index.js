@@ -49,8 +49,20 @@ async function generateImage() {
 		// 	await saveImage(heightDataToColorBuffer(heightData), (i + 1) + '_iterations.png');
 		// }
 	}
+	findMaxMinHeight(heightData);
 
 	return heightDataToColorBuffer(heightData);
+}
+
+function findMaxMinHeight(heightData) {
+	heightData.forEach((h) => {
+		if (h > maxHeight) {
+			maxHeight = h;
+		}
+		if (h < minHeight) {
+			minHeight = h;
+		}
+	});
 }
 
 function heightDataToColorBuffer(heightData) {
@@ -79,19 +91,14 @@ function shiftSide(heightData) {
 	let x2 = getRandomInt(0, width - 1);
 	let y2 = getRandomInt(0, height - 1);
 	for (let y = 0; y < height; y++) {
+		const stride = y * width;
 		for (let x = 0; x < width; x++) {
-			let d = pointSide(x, y, x1, y1, x2, y2);
-			const i = x + y * width;
+			const d = pointSide(x, y, x1, y1, x2, y2);
+			const i = x + stride;
 			if (d > 0) {
 				heightData[i] ++;
 			} else if (d < 0) {
 				heightData[i] --;
-			}
-			if (heightData[i] > maxHeight) {
-				maxHeight = heightData[i];
-			}
-			if (heightData[i] < minHeight) {
-				minHeight = heightData[i];
 			}
 		}
 	}
