@@ -11,6 +11,11 @@ let minHeight = 0;
 
 const colorRamp = [
 	[0,0,100],
+	[0,0,100],
+	[0,0,100],
+	[0,0,100],
+	[0,0,100],
+	[0,0,100],
 	[0,0,155],
 	[0,0,170],
 	[0,0,180],
@@ -46,6 +51,7 @@ async function generateImage() {
 	for (let i = 0; i < numIterations; i++) {
 		shiftSide(heightData);
 		// if ([10, 50, 100, 500, 1000, 2000].includes(i + 1)) {
+		// 	findMaxMinHeight(heightData);
 		// 	await saveImage(heightDataToColorBuffer(heightData), (i + 1) + '_iterations.png');
 		// }
 	}
@@ -86,10 +92,10 @@ function normalize(num, min, max) {
 // go through all points and raise/lower them depending
 // on which side of the line segment they lie on
 function shiftSide(heightData) {
-	let x1 = getRandomInt(0, width - 1);
-	let y1 = getRandomInt(0, height - 1);
-	let x2 = getRandomInt(0, width - 1);
-	let y2 = getRandomInt(0, height - 1);
+	const x1 = getRandomInt(0, width - 1);
+	const y1 = getRandomInt(0, height - 1);
+	const x2 = getRandomInt(0, width - 1);
+	const y2 = getRandomInt(0, height - 1);
 	for (let y = 0; y < height; y++) {
 		const stride = y * width;
 		for (let x = 0; x < width; x++) {
