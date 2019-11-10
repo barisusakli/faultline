@@ -45,8 +45,15 @@ async function generateImage() {
 
 	for (let i = 0; i < numIterations; i++) {
 		shiftSide(heightData);
+		// if ([10, 50, 100, 500, 1000, 2000].includes(i + 1)) {
+		// 	await saveImage(heightDataToColorBuffer(heightData), (i + 1) + '_iterations.png');
+		// }
 	}
 
+	return heightDataToColorBuffer(heightData);
+}
+
+function heightDataToColorBuffer(heightData) {
 	const colorData = [];
 	for (let i = 0; i < height; i++) {
 		for (let k = 0; k < width; k++) {
