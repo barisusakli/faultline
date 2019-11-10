@@ -1,0 +1,30 @@
+{
+    "name": "faultline",
+    "license": "MIT",
+    "description": "Generate terrain images using fault line formation algorithm",
+    "version": "1.0.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/barisusakli/faultline"
+    },
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "dependencies": {
+      "jimp": "0.8.5"
+    },
+    "bugs": {
+      "url": "https://github.com/barisusakli/faultline/issues"
+    },
+    "engines": {
+      "node": ">=10"
+    },
+    "maintainers": [
+      {
+        "name": "Barış Soner Uşaklı",
+        "email": "barisusakli@gmail.com",
+        "url": "https://github.com/barisusakli"
+      }
+    ]
+  }
