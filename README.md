@@ -1,5 +1,5 @@
 # faultline
-Generate images using fault line formation algorithm
+Generate terrain images using fault line formation algorithm
 
 10 iterations             |  50 iterations | 100 iterations
 :-------------------------:|:-------------------------:|:---------------------------:
